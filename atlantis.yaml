@@ -3,11 +3,20 @@ projects:
 - dir: .
   name: production
   workflow: production
+- dir: .
+  name: staging
+  workflow: staging
   autoplan:
     enabled: false
   apply_requirements: [approved]
 workflows:
   production:
+   plan:
+     steps:
+     - init
+     - run: ./run_test.sh
+     - plan
+  staging:
    plan:
      steps:
      - init
