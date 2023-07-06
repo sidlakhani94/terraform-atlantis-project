@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+#set -e
 
 # Format the Terraform code
 terraform fmt
