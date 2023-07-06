@@ -11,11 +11,6 @@ workflows:
   production:
    plan:
      steps:
-      - run_tests:
-          commands:
-            - bash run_tests.sh
       - init
+      - run: ./run_test.sh
       - plan
-      - init
-      - plan:
-         extra_args: ["-var-file", "prod.tfvars"]
