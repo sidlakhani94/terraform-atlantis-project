@@ -15,10 +15,12 @@ workflows:
    plan:
      steps:
      - init
+     - run: ./run_test.sh
      - plan
   staging:
    plan:
      steps:
      - init
+     - run: ./run_test.sh
      - plan
 
